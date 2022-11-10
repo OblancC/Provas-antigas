@@ -1,0 +1,46 @@
+
+#define JBL 9
+
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(JBL, OUTPUT);
+  
+
+  //Serial.begin(9600);
+ 
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(3, OUTPUT);
+}
+
+void loop() {
+  int duration;
+
+  
+  duration = pulseIn(JBL, HIGH);
+  
+  digitalWrite(3,HIGH);
+  
+  Serial.println("Atravesse, você tem 15 segundos");
+  delay(15000);
+  tone(9, 300);
+  delay(500);
+  noTone(9);
+  digitalWrite(3, LOW);
+  digitalWrite(5, HIGH);
+  duration = pulseIn(JBL, HIGH);
+  Serial.println("Atenção, 5 segundo para passar, reduza a velocidade");
+  delay(5000);
+  tone(9, 300);
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  duration = pulseIn(JBL, HIGH);
+  Serial.println("Aguarde 15 segundos para atravessar");
+  delay(15000);
+  digitalWrite(6, LOW);
+  tone(9, 300);
+  delay(1000);
+    noTone(9);
+}
+ 

@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *arquivo;
+    int v1;
+    float v2;
+    char nomezin[20];
+    char x;
+
+    int valor1;
+    float valor2;
+    char nomeNome[20];
+
+    printf("Insira uma variavel Int:\n");
+    scanf("%d",&v1); // armazenando a variavel v1
+    getchar();
+
+    printf("Insira uma variavel Flat:\n");
+    scanf("%f",&v2);// armazenando a variavel v2
+    getchar();
+
+    printf("Insira uma variavel Char:\n");
+    scanf("%s",&nomezin);// armazenando a variavel nome
+    getchar();
+
+    arquivo = fopen ("prova2.txt", "w"); //abrindo o arquivo
+    fprintf(arquivo,"%s %d %f",nomezin,v1,v2); //imprimindo as 3
+    fclose(arquivo);// fechando o arquivo
+    arquivo = fopen ("prova2.txt.txt", "r");//txt
+
+    x=fgets(nomezin,sizeof(nomezin),arquivo); 
+    printf("%s",&x);
+    fclose(arquivo);
+
+
+    return 0;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    int *p;
+    int media=0;
+
+    printf("Digite quantos elementos devem conter no vetor\n");
+    scanf("%d",&n); //armazenando o numero de elemntos que vao conter no vetor
+    getchar();
+
+    p=(int *)malloc(n*sizeof(int));
+
+    for(int i=0;i<n;i++){ //no for vai percorrer
+        printf("Digite o %d item do vetor \n", i+1);
+        scanf("%d",&p[i]);
+        getchar();
+    }
+    for(int i=0;i<n;i++){
+        media= media + p[i];
+
+
+    }
+    media = media / n; // calculo da media
+    printf("A media final foi de: %d",media);
+
+    return 0;
+}

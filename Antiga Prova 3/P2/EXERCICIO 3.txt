@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 10
+//EXERCICIO DO BUBBLESORT
+//primeiro usei o define para o tamanho na quantidade 10
+
+int main()
+{
+    int numeros[TAMANHO];
+    int i;
+    int aux;
+    int contador;
+
+    printf("Entre com 10 numeros:\n");
+
+    for(i=0;i<TAMANHO;i++){  //a repeticao se dara 10 vezes pois ja aderi um valor em TAMANHO como sendo 10 usando define
+        scanf("%d",&numeros[i]);
+    }
+    //apos percorrido as 10 casas pelo for, pedi para apresentar os 10 numeros na ordem inserida utilizando outro for
+    printf("Ordem ate o momento dos numeros inseridos:\n");
+    for (i=0;i<TAMANHO;i++){
+        printf("%4d",numeros[i]);
+    }
+//sistema bubblesort
+    for(contador=1;contador<TAMANHO;contador++){  //utilizando um if estabeleci uma condiçao, sendo ela verdadeira, minha variavel aux, vai mudar de posicao, e vai fazendo isso percorrendo todo for ate estar na ordem crescente
+        for(i=0;i<TAMANHO-1;i++){
+            if(numeros[i]>numeros[i+1]){
+                aux=numeros[i];
+                numeros[i]=numeros[i+1];
+                numeros[i+1]=aux;
+            }
+        }
+    }
+    //agora ele feito corretamente as verificaçoes do for de cima, ele vai printar a ordem crescente do numeros inseridos
+    printf("\nELEMENTOS ORDENADOS EM ORDEM CRESCENTE:\n");
+    for(i=0;i<TAMANHO;i++){
+        printf("%4d",numeros[i]);
+    }
+    //a parte do %4 funciona com um space
+    return 0;
+}

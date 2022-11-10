@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //utilizando os dados do exercicio
+    float notas;
+    float Ms,Xn;
+    int n;
+
+    printf("Qual a quantidade de notas vai inserir");
+    scanf("%d",&n); //armazenando a quantidade de notas
+    //faço um for para pedir n quantidades de nota armazeno e jogo na equaçao
+
+    for(int i=0; i<n;i++){
+        printf("Insira suas notas:\n");
+        scanf("%f",&notas);
+        Ms= notas/n;
+    }
+
+
+    printf("A sua media foi de %f",Ms);
+
+    return 0;
+}

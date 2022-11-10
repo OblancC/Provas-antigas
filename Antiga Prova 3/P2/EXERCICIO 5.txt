@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//PRIMEIRO FIZ UMA STRUCT COM OS DADOS DE NOME E TELEFONE
+
+struct agenda_telefonica
+{
+    char nome_pessoa [25];
+    float telefone;
+
+
+
+}
+agen_telefonica[4]; //diminui o nome pra facilitar
+
+
+
+
+int main (void)
+{
+
+
+    printf("\n\n----------Agenda Telefonica----------\n\n");
+
+    for(int i=0; i<4; i++){ //for para percorrer a quantidade de nomes e numeros
+
+        printf("\nNome:");
+        fflush(stdin); //limpar o teclado
+        gets(agen_telefonica[i].nome_pessoa); //gets para pegar o dps do space
+
+        printf("\nDigite o telefone:");
+        scanf("%f",&agen_telefonica[i].telefone);
+        //salvando o numero
+
+
+    }
+
+//mais um for que vai printar os nomes e telefones inseridos
+    for (int i=0;i<4;i++){
+        printf("\n\n----------Dados do Cliente----------\n\n");
+
+        printf("\n\tNome:%s\tTelefone:%f",agen_telefonica[i].nome_pessoa,agen_telefonica[i].telefone);
+        //printf("\nTelefone:%d",agen_telefonica[i].telefone);
+
+
+    }
+
+
+
+
+
+
+    return 0;
+}
